@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 878234244}
     - target: {fileID: 8947411489481449495, guid: c052958093fbf5242ae54966fc916d9c, type: 3}
       propertyPath: m_Mass
-      value: 1.7
+      value: 1.6
       objectReference: {fileID: 0}
     - target: {fileID: 8947411489481449495, guid: c052958093fbf5242ae54966fc916d9c, type: 3}
       propertyPath: m_BodyType
@@ -409,7 +409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8947411489481449495, guid: c052958093fbf5242ae54966fc916d9c, type: 3}
       propertyPath: m_GravityScale
-      value: 1.2
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 8947411489481449577, guid: c052958093fbf5242ae54966fc916d9c, type: 3}
       propertyPath: m_RootOrder
@@ -829,7 +829,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878234244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: -2}
+  m_LocalPosition: {x: 14, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
