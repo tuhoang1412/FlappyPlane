@@ -9,6 +9,7 @@ TagManager:
   - Star
   - Rock
   - StarIce
+  - HighScore
   layers:
   - Default
   - TransparentFX

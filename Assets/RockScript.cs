@@ -6,35 +6,31 @@ public class RockScript : MonoBehaviour
 {
     public float moveSpeed;
     private int leftLimit;
+    private ScoreCounter score;
     // Start is called before the first frame update
     // private Vector3 XU, XD;
-    private float offsetX;
     void Start()
     {
-        SetXOffset();
+        score = GameObject.Find("Score").GetComponent<ScoreCounter>();
         moveSpeed = 5f;
-        leftLimit = -14;
+        leftLimit = -12;
     }
-    void SetXOffset()
-    {
-        offsetX = Random.Range(0.4f, 0.7f);
-        Vector3 horizontalShift = new Vector3(offsetX, 0, 0);
-        if (Random.value > 0.5)
-        {
-            transform.GetChild(0).gameObject.transform.position += horizontalShift;
-            transform.GetChild(1).gameObject.transform.position -= horizontalShift;
-        }
-        else
-        {
-            transform.GetChild(0).gameObject.transform.position -= horizontalShift;
-            transform.GetChild(1).gameObject.transform.position += horizontalShift;
-        }
 
-    }
     // Update is called once per frame
     void Update()
     {
+        if (score.score >= 20)
+        {
+            moveSpeed = 7f;
+        }
+        else if (score.score >= 10)
+        {
+            moveSpeed = 6f;
+        }
         transform.position = transform.position + (Vector3.left * moveSpeed) * Time.deltaTime;
+    }
+    void FixedUpdate()
+    {
         if (transform.position.x < leftLimit)
         {
             Destroy(gameObject);

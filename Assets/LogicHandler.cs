@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class LogicHandler : MonoBehaviour
 {
     public GameObject gameOver;
@@ -11,6 +12,7 @@ public class LogicHandler : MonoBehaviour
     public GameObject scoreGO;
     private Rigidbody2D planeBody2D;
 
+    public GameObject overScore;
     private bool ready;
     private ScoreCounter scoreCounter;
 
@@ -49,6 +51,11 @@ public class LogicHandler : MonoBehaviour
     }
     public void GameOver()
     {
+        if (scoreCounter.score > (PlayerPrefs.HasKey("highscore") ? PlayerPrefs.GetInt("highscore") : 0))
+        {
+            PlayerPrefs.SetInt("highscore", scoreCounter.score);
+        }
+        overScore.GetComponent<Text>().text = "SCORE: " + scoreCounter.score.ToString();
         gameOver.SetActive(true);
     }
 
